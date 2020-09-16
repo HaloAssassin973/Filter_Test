@@ -8,7 +8,6 @@
 
 import UIKit
 import AVKit
-import VFCabbage
 import CoreMedia
 
 final class ViewController: UIViewController {
@@ -59,6 +58,9 @@ final class ViewController: UIViewController {
         guard let filter = CIFilter(name: "CITemperatureAndTint") else { return }
 
         let composition = AVVideoComposition(asset: asset!, applyingCIFiltersWithHandler: { request in
+            
+            let source = request.sourceImage.clampedToExtent()
+            filter.setValue(source, forKey: kCIInputImageKey)
             
             filter.setValue(CIVector(x: 6500, y: 500), forKey: "inputNeutral")
             filter.setValue(CIVector(x: 1000, y: 630), forKey: "inputTargetNeutral")
