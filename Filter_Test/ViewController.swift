@@ -8,6 +8,8 @@
 
 import UIKit
 import AVKit
+import VFCabbage
+import CoreMedia
 
 final class ViewController: UIViewController {
     
@@ -17,11 +19,19 @@ final class ViewController: UIViewController {
     
     
     // MARK: - Private properties
-    private var videoURL: URL?
+    private var videoURL: URL? {
+        didSet {
+            guard let url = videoURL else { return }
+            asset = AVAsset(url: url)
+        }
+    }
+    private var asset: AVAsset?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupButton()
     }
     
     @IBAction func tapChooseButton(_ sender: UIButton) {
@@ -29,6 +39,11 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    
+    private func setupButton() {
+        chooseButton.layer.cornerRadius = chooseButton.bounds.height / 2
+    }
+    
     private func openVideoGallery() {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -41,15 +56,30 @@ final class ViewController: UIViewController {
     }
     
     private func createPlayer(URL: URL?) {
-        guard let url = URL else { return }
-        let player = AVPlayer(url: url)
+        guard let filter = CIFilter(name: "CITemperatureAndTint") else { return }
+
+        let composition = AVVideoComposition(asset: asset!, applyingCIFiltersWithHandler: { request in
+            
+            filter.setValue(CIVector(x: 6500, y: 500), forKey: "inputNeutral")
+            filter.setValue(CIVector(x: 1000, y: 630), forKey: "inputTargetNeutral")
+            
+            // Crop the blurred output to the bounds of the original image
+            let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
+            
+            // Provide the filter output to the composition
+            request.finish(with: output, context: nil)
+        })
+        
+        let playerItem = AVPlayerItem(asset: asset!)
+        playerItem.videoComposition = composition
+        
+        let player = AVPlayer(playerItem: playerItem)
         let playerController = AVPlayerViewController()
         playerController.player = player
         playerController.view.frame = containerView.frame
         self.addChild(playerController)
         self.view.addSubview(playerController.view)
     }
-    
 }
 
 // MARK: - UIImagePickerControllerDelegate

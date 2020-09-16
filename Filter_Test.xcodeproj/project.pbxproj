@@ -13,7 +13,9 @@
 		455234132512190900BB49DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455234112512190900BB49DD /* Main.storyboard */; };
 		455234152512190E00BB49DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455234142512190E00BB49DD /* Assets.xcassets */; };
 		455234182512190E00BB49DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455234162512190E00BB49DD /* LaunchScreen.storyboard */; };
-		45F676E625123D1C0048DA8C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F676E525123D1C0048DA8C /* UIButton.swift */; };
+		45F676E925124B8C0048DA8C /* Dodecahedron.stl in Resources */ = {isa = PBXBuildFile; fileRef = 45F676E725124B8B0048DA8C /* Dodecahedron.stl */; };
+		45F676EA25124B8C0048DA8C /* Dodecahedron.scn in Resources */ = {isa = PBXBuildFile; fileRef = 45F676E825124B8C0048DA8C /* Dodecahedron.scn */; };
+		45F676EC25124C8A0048DA8C /* DodecahedronVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F676EB25124C8A0048DA8C /* DodecahedronVC.swift */; };
 		8FF5A33BA6016DEF7B611073 /* Pods_Filter_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778F22FED152520AEE2EEFE6 /* Pods_Filter_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +28,9 @@
 		455234142512190E00BB49DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		455234172512190E00BB49DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		455234192512190E00BB49DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45F676E525123D1C0048DA8C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		45F676E725124B8B0048DA8C /* Dodecahedron.stl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dodecahedron.stl; sourceTree = "<group>"; };
+		45F676E825124B8C0048DA8C /* Dodecahedron.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dodecahedron.scn; sourceTree = "<group>"; };
+		45F676EB25124C8A0048DA8C /* DodecahedronVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DodecahedronVC.swift; sourceTree = "<group>"; };
 		778F22FED152520AEE2EEFE6 /* Pods_Filter_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filter_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6ABB6E793BA26C92BEF575C /* Pods-Filter_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filter_Test.release.xcconfig"; path = "Target Support Files/Pods-Filter_Test/Pods-Filter_Test.release.xcconfig"; sourceTree = "<group>"; };
 		FB56DEE5320B35FCA2791672 /* Pods-Filter_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filter_Test.debug.xcconfig"; path = "Target Support Files/Pods-Filter_Test/Pods-Filter_Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,24 +86,18 @@
 		4552340A2512190900BB49DD /* Filter_Test */ = {
 			isa = PBXGroup;
 			children = (
-				4552341F25121E7B00BB49DD /* UIExtension */,
 				4552340B2512190900BB49DD /* AppDelegate.swift */,
 				4552340D2512190900BB49DD /* SceneDelegate.swift */,
 				4552340F2512190900BB49DD /* ViewController.swift */,
+				45F676E825124B8C0048DA8C /* Dodecahedron.scn */,
+				45F676E725124B8B0048DA8C /* Dodecahedron.stl */,
+				45F676EB25124C8A0048DA8C /* DodecahedronVC.swift */,
 				455234112512190900BB49DD /* Main.storyboard */,
 				455234142512190E00BB49DD /* Assets.xcassets */,
 				455234162512190E00BB49DD /* LaunchScreen.storyboard */,
 				455234192512190E00BB49DD /* Info.plist */,
 			);
 			path = Filter_Test;
-			sourceTree = "<group>";
-		};
-		4552341F25121E7B00BB49DD /* UIExtension */ = {
-			isa = PBXGroup;
-			children = (
-				45F676E525123D1C0048DA8C /* UIButton.swift */,
-			);
-			path = UIExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +160,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F676EA25124B8C0048DA8C /* Dodecahedron.scn in Resources */,
 				455234182512190E00BB49DD /* LaunchScreen.storyboard in Resources */,
+				45F676E925124B8C0048DA8C /* Dodecahedron.stl in Resources */,
 				455234152512190E00BB49DD /* Assets.xcassets in Resources */,
 				455234132512190900BB49DD /* Main.storyboard in Resources */,
 			);
@@ -217,10 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F676EC25124C8A0048DA8C /* DodecahedronVC.swift in Sources */,
 				455234102512190900BB49DD /* ViewController.swift in Sources */,
 				4552340C2512190900BB49DD /* AppDelegate.swift in Sources */,
 				4552340E2512190900BB49DD /* SceneDelegate.swift in Sources */,
-				45F676E625123D1C0048DA8C /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
