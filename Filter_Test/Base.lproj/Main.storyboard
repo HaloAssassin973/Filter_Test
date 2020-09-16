@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8pc-kt-0pF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -16,11 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElJ-2c-5zi">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="EOs-Qi-e3Q"/>
-                                    <constraint firstAttribute="width" constant="240" id="nAg-9c-84f"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <connections>
                                     <outlet property="delegate" destination="8pc-kt-0pF" id="git-g3-yC8"/>
                                 </connections>
@@ -28,8 +24,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="centerX" secondItem="Cn8-zZ-F1f" secondAttribute="centerX" id="GCv-HX-rY6"/>
-                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="centerY" secondItem="Cn8-zZ-F1f" secondAttribute="centerY" id="gyT-Hk-wid"/>
+                            <constraint firstItem="clq-69-2PG" firstAttribute="bottom" secondItem="ElJ-2c-5zi" secondAttribute="bottom" id="83N-fr-GXv"/>
+                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="leading" secondItem="clq-69-2PG" secondAttribute="leading" id="Ovx-Ms-cT8"/>
+                            <constraint firstItem="clq-69-2PG" firstAttribute="trailing" secondItem="ElJ-2c-5zi" secondAttribute="trailing" id="QQ6-R3-VfQ"/>
+                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="top" secondItem="clq-69-2PG" secondAttribute="top" id="rE5-VX-dWp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="clq-69-2PG"/>
                     </view>
