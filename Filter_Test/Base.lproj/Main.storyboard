@@ -28,18 +28,35 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <state key="normal" title="Choose New Video"/>
+                                <connections>
+                                    <action selector="tapChooseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8O-6D-I1G"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tuK-OS-94v">
+                                <rect key="frame" x="57" y="273" width="300" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="9RW-YM-QGf"/>
+                                    <constraint firstAttribute="width" constant="300" id="yhh-Zm-3Dw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cFz-E1-l1q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Iei-ec-vEx"/>
+                            <constraint firstItem="tuK-OS-94v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JPd-zB-fq7"/>
                             <constraint firstItem="K6x-iJ-aEe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NXq-LB-dNC"/>
                             <constraint firstItem="cFz-E1-l1q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-27" id="YOm-Xd-Wra"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFz-E1-l1q" secondAttribute="trailing" constant="16" id="c83-hD-sqT"/>
                             <constraint firstItem="K6x-iJ-aEe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="mVb-p6-9Y8"/>
+                            <constraint firstItem="tuK-OS-94v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z3F-k9-NUY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chooseButton" destination="cFz-E1-l1q" id="IKK-S8-WBT"/>
+                        <outlet property="containerView" destination="tuK-OS-94v" id="FRt-qF-RPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
