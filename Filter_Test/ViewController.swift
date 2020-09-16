@@ -15,6 +15,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var chooseButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     
+    
     // MARK: - Private properties
     private var videoURL: URL?
     
@@ -44,7 +45,9 @@ final class ViewController: UIViewController {
         let player = AVPlayer(url: url)
         let playerController = AVPlayerViewController()
         playerController.player = player
+        playerController.view.frame = containerView.frame
         self.addChild(playerController)
+        self.view.addSubview(playerController.view)
     }
     
 }
