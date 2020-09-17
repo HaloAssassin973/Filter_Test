@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class DodecahedronSCNView: SCNView {
+class IcosahedronSCNView: SCNView {
     
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -18,28 +18,28 @@ class DodecahedronSCNView: SCNView {
     
     // MARK: - Methods
     private func setupAndCreateFigure() {
-        let dodecahedronScene = SCNScene(named: "Dodecahedron.scn")
-        guard let node = (dodecahedronScene?.rootNode.childNodes.first) else { return }
+        let dodecahedronScene = SCNScene(named: "Icosahedron.scn")
+        guard let dodecahedronNode = (dodecahedronScene?.rootNode.childNodes.first) else { return }
 
         let defaultScene = SCNScene()
         scene = defaultScene
-        scene?.rootNode.addChildNode(node)
+        scene?.rootNode.addChildNode(dodecahedronNode)
         
-        centerPivot(for: node)
+//        centerPivot(for: dodecahedronNode)
         
         let action = SCNAction.rotate(by: 360 * CGFloat(Double.pi / 180), around: SCNVector3(x: 0.1, y: 0.1, z: 0), duration: 6)
         let repeatAction = SCNAction.repeatForever(action)
-        node.runAction(repeatAction)
+        dodecahedronNode.runAction(repeatAction)
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 37, z: -10)
+        cameraNode.position = SCNVector3(x: 0, y: 0, z: 2)
         scene?.rootNode.addChildNode(cameraNode)
 
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
         lightNode.light?.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 62, z: -12)
+        lightNode.position = SCNVector3(x: 0, y: 8, z: 10)
         lightNode.rotation = SCNVector4(x: -25, y: 0, z: 0, w: 0)
         scene?.rootNode.addChildNode(lightNode)
     }

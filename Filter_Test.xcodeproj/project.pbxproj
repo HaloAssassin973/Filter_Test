@@ -13,8 +13,8 @@
 		455234132512190900BB49DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455234112512190900BB49DD /* Main.storyboard */; };
 		455234152512190E00BB49DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455234142512190E00BB49DD /* Assets.xcassets */; };
 		455234182512190E00BB49DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455234162512190E00BB49DD /* LaunchScreen.storyboard */; };
-		45F676EA25124B8C0048DA8C /* Dodecahedron.scn in Resources */ = {isa = PBXBuildFile; fileRef = 45F676E825124B8C0048DA8C /* Dodecahedron.scn */; };
-		45F676F2251366330048DA8C /* DodecahedronSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F676F1251366320048DA8C /* DodecahedronSCNView.swift */; };
+		45F676F2251366330048DA8C /* IcosahedronSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F676F1251366320048DA8C /* IcosahedronSCNView.swift */; };
+		45F676F6251372490048DA8C /* Icosahedron.scn in Resources */ = {isa = PBXBuildFile; fileRef = 45F676F5251372490048DA8C /* Icosahedron.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		455234142512190E00BB49DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		455234172512190E00BB49DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		455234192512190E00BB49DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45F676E825124B8C0048DA8C /* Dodecahedron.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dodecahedron.scn; sourceTree = "<group>"; };
-		45F676F1251366320048DA8C /* DodecahedronSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DodecahedronSCNView.swift; sourceTree = "<group>"; };
+		45F676F1251366320048DA8C /* IcosahedronSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IcosahedronSCNView.swift; sourceTree = "<group>"; };
+		45F676F5251372490048DA8C /* Icosahedron.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Icosahedron.scn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +60,33 @@
 		4552340A2512190900BB49DD /* Filter_Test */ = {
 			isa = PBXGroup;
 			children = (
+				45F676F8251375180048DA8C /* Controllers */,
+				45F676F7251374DF0048DA8C /* Icosahedron */,
 				4552340B2512190900BB49DD /* AppDelegate.swift */,
 				4552340D2512190900BB49DD /* SceneDelegate.swift */,
-				4552340F2512190900BB49DD /* MainViewController.swift */,
-				45F676F1251366320048DA8C /* DodecahedronSCNView.swift */,
-				45F676E825124B8C0048DA8C /* Dodecahedron.scn */,
 				455234112512190900BB49DD /* Main.storyboard */,
 				455234142512190E00BB49DD /* Assets.xcassets */,
 				455234162512190E00BB49DD /* LaunchScreen.storyboard */,
 				455234192512190E00BB49DD /* Info.plist */,
 			);
 			path = Filter_Test;
+			sourceTree = "<group>";
+		};
+		45F676F7251374DF0048DA8C /* Icosahedron */ = {
+			isa = PBXGroup;
+			children = (
+				45F676F1251366320048DA8C /* IcosahedronSCNView.swift */,
+				45F676F5251372490048DA8C /* Icosahedron.scn */,
+			);
+			path = Icosahedron;
+			sourceTree = "<group>";
+		};
+		45F676F8251375180048DA8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4552340F2512190900BB49DD /* MainViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +147,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F676EA25124B8C0048DA8C /* Dodecahedron.scn in Resources */,
 				455234182512190E00BB49DD /* LaunchScreen.storyboard in Resources */,
 				455234152512190E00BB49DD /* Assets.xcassets in Resources */,
+				45F676F6251372490048DA8C /* Icosahedron.scn in Resources */,
 				455234132512190900BB49DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +164,7 @@
 				455234102512190900BB49DD /* MainViewController.swift in Sources */,
 				4552340C2512190900BB49DD /* AppDelegate.swift in Sources */,
 				4552340E2512190900BB49DD /* SceneDelegate.swift in Sources */,
-				45F676F2251366330048DA8C /* DodecahedronSCNView.swift in Sources */,
+				45F676F2251366330048DA8C /* IcosahedronSCNView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
