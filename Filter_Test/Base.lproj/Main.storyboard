@@ -48,11 +48,10 @@
                                     <constraint firstAttribute="width" constant="343" id="ci8-9I-ek2"/>
                                 </constraints>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-Xl-RLY" customClass="DodecahedronSCNView" customModule="Filter_Test" customModuleProvider="target">
-                                <rect key="frame" x="57" y="273" width="300" height="350"/>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-Xl-RLY" customClass="IcosahedronSCNView" customModule="Filter_Test" customModuleProvider="target">
+                                <rect key="frame" x="16" y="273" width="382" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="JdF-9z-RlX"/>
-                                    <constraint firstAttribute="height" constant="350" id="l1x-jq-jVB"/>
+                                    <constraint firstAttribute="height" constant="350" id="1st-0f-deu"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rss-k0-s1h"/>
@@ -61,9 +60,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="XJZ-Xl-RLY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8lv-mO-Wam"/>
                             <constraint firstItem="0cE-HS-OCc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F63-Hl-V7o"/>
                             <constraint firstItem="cFz-E1-l1q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Iei-ec-vEx"/>
                             <constraint firstItem="K6x-iJ-aEe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NXq-LB-dNC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJZ-Xl-RLY" secondAttribute="trailing" constant="16" id="U8G-vQ-d20"/>
                             <constraint firstItem="cFz-E1-l1q" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-27" id="YOm-Xd-Wra"/>
                             <constraint firstItem="XJZ-Xl-RLY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bCq-m8-LnM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFz-E1-l1q" secondAttribute="trailing" constant="16" id="c83-hD-sqT"/>
