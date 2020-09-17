@@ -31,11 +31,16 @@ final class ViewController: UIViewController {
     private var asset: AVAsset?
     
     
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
         setupAndCreateFigure()
     }
+    
+    
+    // MARK: - Actions
     
     @IBAction func tapChooseButton(_ sender: UIButton) {
         openVideoGallery()
@@ -124,7 +129,9 @@ final class ViewController: UIViewController {
     }
 }
 
+
 // MARK: - UIImagePickerControllerDelegate
+
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL
@@ -134,7 +141,9 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
 }
 
+
 // MARK: - UINavigationControllerDelegate
+
 extension ViewController: UINavigationControllerDelegate {
     
 }

@@ -14,7 +14,6 @@
 		455234152512190E00BB49DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 455234142512190E00BB49DD /* Assets.xcassets */; };
 		455234182512190E00BB49DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 455234162512190E00BB49DD /* LaunchScreen.storyboard */; };
 		45F676EA25124B8C0048DA8C /* Dodecahedron.scn in Resources */ = {isa = PBXBuildFile; fileRef = 45F676E825124B8C0048DA8C /* Dodecahedron.scn */; };
-		45F676F025125D980048DA8C /* DodecahedronVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F676EF25125D970048DA8C /* DodecahedronVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		455234172512190E00BB49DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		455234192512190E00BB49DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45F676E825124B8C0048DA8C /* Dodecahedron.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dodecahedron.scn; sourceTree = "<group>"; };
-		45F676EF25125D970048DA8C /* DodecahedronVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DodecahedronVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +62,6 @@
 				4552340D2512190900BB49DD /* SceneDelegate.swift */,
 				4552340F2512190900BB49DD /* ViewController.swift */,
 				45F676E825124B8C0048DA8C /* Dodecahedron.scn */,
-				45F676EF25125D970048DA8C /* DodecahedronVC.swift */,
 				455234112512190900BB49DD /* Main.storyboard */,
 				455234142512190E00BB49DD /* Assets.xcassets */,
 				455234162512190E00BB49DD /* LaunchScreen.storyboard */,
@@ -145,7 +142,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45F676F025125D980048DA8C /* DodecahedronVC.swift in Sources */,
 				455234102512190900BB49DD /* ViewController.swift in Sources */,
 				4552340C2512190900BB49DD /* AppDelegate.swift in Sources */,
 				4552340E2512190900BB49DD /* SceneDelegate.swift in Sources */,
