@@ -7,42 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DodecahedronVC-->
-        <scene sceneID="gHN-bX-EIi">
-            <objects>
-                <viewController id="8pc-kt-0pF" customClass="DodecahedronVC" customModule="Filter_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cn8-zZ-F1f">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElJ-2c-5zi">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <connections>
-                                    <outlet property="delegate" destination="8pc-kt-0pF" id="git-g3-yC8"/>
-                                </connections>
-                            </sceneKitView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="clq-69-2PG" firstAttribute="bottom" secondItem="ElJ-2c-5zi" secondAttribute="bottom" id="83N-fr-GXv"/>
-                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="leading" secondItem="clq-69-2PG" secondAttribute="leading" id="Ovx-Ms-cT8"/>
-                            <constraint firstItem="clq-69-2PG" firstAttribute="trailing" secondItem="ElJ-2c-5zi" secondAttribute="trailing" id="QQ6-R3-VfQ"/>
-                            <constraint firstItem="ElJ-2c-5zi" firstAttribute="top" secondItem="clq-69-2PG" secondAttribute="top" id="rE5-VX-dWp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="clq-69-2PG"/>
-                    </view>
-                    <connections>
-                        <outlet property="sceneView" destination="ElJ-2c-5zi" id="kyq-wF-cQ8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g5D-eR-Lwm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-832" y="92"/>
-        </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Filter_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Filter_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +48,7 @@
                                     <constraint firstAttribute="width" constant="343" id="ci8-9I-ek2"/>
                                 </constraints>
                             </view>
-                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-Xl-RLY">
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJZ-Xl-RLY" customClass="DodecahedronSCNView" customModule="Filter_Test" customModuleProvider="target">
                                 <rect key="frame" x="57" y="273" width="300" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="JdF-9z-RlX"/>

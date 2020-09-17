@@ -11,17 +11,14 @@ import AVKit
 import CoreMedia
 import SceneKit
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController, UINavigationControllerDelegate {
     
-    // MARK: - Public properties
-    
+    // MARK: - Public properties    
     @IBOutlet weak var chooseButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sceneView: SCNView!
-    
-    
+        
     // MARK: - Private properties
-    
     private var videoURL: URL? {
         didSet {
             guard let url = videoURL else { return }
@@ -32,23 +29,18 @@ final class ViewController: UIViewController {
     
   
     // MARK: - Life cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
         setupAndCreateFigure()
     }
-    
   
     // MARK: - Actions
-    
     @IBAction func tapChooseButton(_ sender: UIButton) {
         openVideoGallery()
     }
     
-  
     // MARK: - Private methods
-    
     private func setupButton() {
         chooseButton.layer.cornerRadius = chooseButton.bounds.height / 2
     }
@@ -69,7 +61,7 @@ final class ViewController: UIViewController {
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 37, z: 0)
+        cameraNode.position = SCNVector3(x: 0, y: 37, z: -15)
         sceneView.scene?.rootNode.addChildNode(cameraNode)
 
         let lightNode = SCNNode()
@@ -114,7 +106,7 @@ final class ViewController: UIViewController {
             filter.setValue(CIVector(x: 6500, y: 0), forKey: "inputNeutral")
             filter.setValue(CIVector(x: 2500, y: 0), forKey: "inputTargetNeutral")
             
-            let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
+            guard let output = filter.outputImage?.cropped(to: request.sourceImage.extent) else { return }
             request.finish(with: output, context: nil)
         })
         
@@ -131,21 +123,12 @@ final class ViewController: UIViewController {
 
 }
 
-
 // MARK: - UIImagePickerControllerDelegate
-
-extension ViewController: UIImagePickerControllerDelegate {
+extension MainViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL
         self.dismiss(animated: true, completion: nil)
         createPlayer(URL: videoURL)
         sceneView.removeFromSuperview()
     }
-}
-
-
-// MARK: - UINavigationControllerDelegate
-
-extension ViewController: UINavigationControllerDelegate {
-    
 }
