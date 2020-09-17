@@ -16,15 +16,6 @@ final class MainViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var chooseButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sceneView: DodecahedronSCNView!
-        
-    // MARK: - Private properties
-    private var videoURL: URL? {
-        didSet {
-            guard let url = videoURL else { return }
-            asset = AVAsset(url: url)
-        }
-    }
-    private var asset: AVAsset?
   
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -53,9 +44,9 @@ final class MainViewController: UIViewController, UINavigationControllerDelegate
         present(picker, animated: true, completion: nil)
     }
     
-    private func createPlayer(URL: URL?) {
+    private func createPlayer(url: URL) {
         guard let filter = CIFilter(name: "CITemperatureAndTint") else { return }
-        guard let asset = asset else { return }
+        let asset = AVAsset(url: url)
 
         let composition = AVVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
             
@@ -85,9 +76,9 @@ final class MainViewController: UIViewController, UINavigationControllerDelegate
 // MARK: - UIImagePickerControllerDelegate
 extension MainViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL
+        guard let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL else { return }
         self.dismiss(animated: true, completion: nil)
-        createPlayer(URL: videoURL)
+        createPlayer(url: videoURL)
         sceneView.isHidden = true
     }
 }
