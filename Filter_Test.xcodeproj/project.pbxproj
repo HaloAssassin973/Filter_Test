@@ -142,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F676F025125D980048DA8C /* DodecahedronVC.swift in Sources */,
 				455234102512190900BB49DD /* ViewController.swift in Sources */,
 				4552340C2512190900BB49DD /* AppDelegate.swift in Sources */,
 				4552340E2512190900BB49DD /* SceneDelegate.swift in Sources */,
