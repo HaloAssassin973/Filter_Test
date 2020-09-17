@@ -9,7 +9,6 @@
 import UIKit
 import AVKit
 import CoreMedia
-import SceneKit
 
 final class MainViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -17,29 +16,19 @@ final class MainViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet weak var chooseButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var sceneView: SCNView!
-        
-    // MARK: - Private properties
-    private var videoURL: URL? {
-        didSet {
-            guard let url = videoURL else { return }
-            asset = AVAsset(url: url)
-        }
-    }
-    private var asset: AVAsset?
-    
-  
+
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
-        setupAndCreateFigure()
     }
-  
+
     // MARK: - Actions
     @IBAction func tapChooseButton(_ sender: UIButton) {
         openVideoGallery()
     }
     
+  
     // MARK: - Private methods
     private func setupButton() {
         chooseButton.layer.cornerRadius = chooseButton.bounds.height / 2
@@ -123,8 +112,9 @@ final class MainViewController: UIViewController, UINavigationControllerDelegate
 
 }
 
+
 // MARK: - UIImagePickerControllerDelegate
-extension MainViewController: UIImagePickerControllerDelegate {
+extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL
         self.dismiss(animated: true, completion: nil)
