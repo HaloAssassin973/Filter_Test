@@ -13,11 +13,13 @@ import CoreMedia
 final class ViewController: UIViewController {
     
     // MARK: - Public properties
+    
     @IBOutlet weak var chooseButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     
     
     // MARK: - Private properties
+    
     private var videoURL: URL? {
         didSet {
             guard let url = videoURL else { return }
@@ -56,23 +58,21 @@ final class ViewController: UIViewController {
     
     private func createPlayer(URL: URL?) {
         guard let filter = CIFilter(name: "CITemperatureAndTint") else { return }
+        guard let asset = asset else { return }
 
-        let composition = AVVideoComposition(asset: asset!, applyingCIFiltersWithHandler: { request in
+        let composition = AVVideoComposition(asset: asset, applyingCIFiltersWithHandler: { request in
             
             let source = request.sourceImage.clampedToExtent()
             filter.setValue(source, forKey: kCIInputImageKey)
             
-            filter.setValue(CIVector(x: 6500, y: 500), forKey: "inputNeutral")
-            filter.setValue(CIVector(x: 1000, y: 630), forKey: "inputTargetNeutral")
+            filter.setValue(CIVector(x: 6500, y: 0), forKey: "inputNeutral")
+            filter.setValue(CIVector(x: 2500, y: 0), forKey: "inputTargetNeutral")
             
-            // Crop the blurred output to the bounds of the original image
             let output = filter.outputImage!.cropped(to: request.sourceImage.extent)
-            
-            // Provide the filter output to the composition
             request.finish(with: output, context: nil)
         })
         
-        let playerItem = AVPlayerItem(asset: asset!)
+        let playerItem = AVPlayerItem(asset: asset)
         playerItem.videoComposition = composition
         
         let player = AVPlayer(playerItem: playerItem)
