@@ -7,10 +7,8 @@
 //
 import UIKit
 import SceneKit
-import ModelIO
-import SceneKit.ModelIO
 
-class DodecahedronVC: UIViewController {
+final class DodecahedronVC: UIViewController {
     
     @IBOutlet weak var sceneView: SCNView!
     
